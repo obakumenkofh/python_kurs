@@ -1,4 +1,4 @@
-from Animal import Animal
+from Animal import *
 
 
 # class Employee():
@@ -10,19 +10,43 @@ from Animal import Animal
 
 class Equipment:
     def __init__(self, name, price):
+
         self.name = name
         self.price = price
         self.id = None
         self.owner = None
 
+    def get_info(self):
+        return f"Equipment {self.name}, price {self.price}"
+
 
 class Pet_Shop:
-    def __init__(self):
+    def __init__(self, name, budget=None):
+        self.name = name
+        if budget is None:
+            self.budget = 0
+        else:
+            self.budget = budget
         self.animals = []
         self.equipment = []
 
+    def print_information(self):
+        print(f"All information about the shop {self.name}:")
+        print(f"The budget is: {self.budget}:")
+        for animal in self.animals:
+            print(animal.get_info())
+        for equip in self.equipment:
+            print(equip.get_info())
+
     def add_animal(self, animal):
         self.animals.append(animal)
+
+    def buy_animal(self, animal):
+        if self.budget - animal.price > 0:
+            self.animals.append(animal)
+            self.budget -= animal.price
+        else:
+            print(f"The animal is too expensive, cant buy {animal.get_info()}")
 
     def remove_animal(self, animal):
         if animal in self.animals:

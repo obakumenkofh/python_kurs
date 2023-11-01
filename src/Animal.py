@@ -2,6 +2,9 @@ import random
 from PIL import Image, ImageTk
 import tkinter as tk
 
+# TODO add getter and setter for Animal, read about decorators
+# https://realpython.com/primer-on-python-decorators/
+# more in chat
 
 class Animal:
     def __init__(self, name, species, number_legs=None, breed=None, price=0):
