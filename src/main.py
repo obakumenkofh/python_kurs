@@ -1,18 +1,17 @@
 from solutions.Pet_Shop_solution import *
+from solutions.Animal_solution import *
+# here we can test the class
 
 animals = generate_animals([2, 2, 2, 2])
-cat = animals[3]
-cat.jump()
+best_buy = Pet_Shop("Oleg's Pets", 1000)
+equipment = generate_equipment()
+
+for equp in equipment:
+    best_buy.add_equipment(equp)
+
 for animal in animals:
-    print(animal.get_info())
+    best_buy.add_animal(animal)
 
-dogs = animals[:2]
-cats = animals[2:4]
-
-for index, dog in enumerate(dogs):
-    print(dog.greet(cats[index]))
-
-best_buy = Pet_Shop("Oleg's Pets", 50)
-best_buy.add_animal(animals[0])
-best_buy.buy_animal(animals[-1])
+best_buy.print_information()
+best_buy.black_friday_adjustment()
 best_buy.print_information()
