@@ -1,16 +1,16 @@
-from Animal import *
-from Pet_Shop import *
+from solutions.Pet_Shop_solution import *
 
 animals = generate_animals([2, 2, 2, 2])
-
+cat = animals[3]
+cat.jump()
 for animal in animals:
     print(animal.get_info())
 
 dogs = animals[:2]
 cats = animals[2:4]
 
-for i, dog in enumerate(dogs):
-    print(dog.greet(cats[i]))
+for index, dog in enumerate(dogs):
+    print(dog.greet(cats[index]))
 
 best_buy = Pet_Shop("Oleg's Pets", 50)
 best_buy.add_animal(animals[0])
