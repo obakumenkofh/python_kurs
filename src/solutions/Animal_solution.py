@@ -155,7 +155,6 @@ class Cat(Animal):
                 breed = self.breed
             else:
                 breed = other.breed
-                Animal
             return Cat(name="no_name", species="Cat", age=0, sex=random.choice(["male", "female"]), size=0,
                        breed=breed, number_legs=4, happiness=100, price=0)
 

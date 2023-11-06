@@ -1,6 +1,4 @@
 import datetime
-
-
 class Equipment:
     def __init__(self, name, price):
         self.name = name

@@ -110,7 +110,7 @@ class Pet_Shop:
         # Get the current date
         year, month, day = str(datetime.date.today()).split('-')
 
-        if day == '03' and month == '11' and year == '2023':
+        if day == '11' and month == '11' and year == '2023':
             for equip in self.equipment:
                 equip.price += 20
 
@@ -161,7 +161,7 @@ def generate_equipment():
 
 if __name__ == "__main__":
     # here we can test the class
-    best_buy = Pet_Shop("Oleg's Pets", 1000)
+    best_buy = Pet_Shop("Best's Pets", 1000)
     equipment = generate_equipment()
     animals = generate_animals([3, 2, 3, 2])
     for equp in equipment:
