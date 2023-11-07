@@ -8,17 +8,16 @@ random.seed(0)
 
 class Animal:
     """
-        :param name:
-        :param species:
-        :param age:
-        :param sex:
-        :param size:
-        :param breed:
-        :param number_legs:
-        :param happiness:
-        :param price:
+        name:
+        species:
+        age:
+        sex:
+        size:
+        breed:
+        number_legs:
+        happiness:
+        price:
     """
-
     def __init__(self, name, species, age, sex, size, breed=None, number_legs=None, happiness=0, price=0):
         self.name = name
         self.species = species
@@ -29,6 +28,38 @@ class Animal:
         self.breed = breed
         self.price = price
         self.happiness = happiness
+
+    def greet(self, animal):
+        return ""
+
+    def speak(self):
+        return ""
+
+    # this is an example for super() method, the naming for this function is actually bad
+    def play(self):
+        toys = [
+            "Feather wands",
+            "Laser pointers",
+            "Tennis balls",
+            "Frisbees",
+            "Mirrors",
+            "Swings",
+            "Hay-filled tunnels",
+            "Cardboard boxes",
+            "Exercise wheels",
+            "Tubes",
+            "Floating basking platforms",
+            "Jolly balls"
+        ]
+        return random.choice(toys)
+
+    def __len__(self):
+        # let's define a magic function for the super-class
+        return self.size
+
+    def get_info(self):
+        return (f"Animal: {self.species}, name: {self.name}, sex: {self.sex}, breed: {self.breed}, age: {self.age}, "
+                f"size: {self.size}, price: {self.price}")
 
     def play_gif(self, gif_name):
         # this function loads a .gif file and plots in a window, nothing fancy
@@ -62,38 +93,6 @@ class Animal:
         # Start the main event loop
         update_gif(0)
         window.mainloop()
-
-    def greet(self, animal):
-        return ""
-
-    def speak(self):
-        return ""
-
-    # this is an example for super() method, the naming for this function is actually bad
-    def play(self):
-        toys = [
-            "Feather wands",
-            "Laser pointers",
-            "Tennis balls",
-            "Frisbees",
-            "Mirrors",
-            "Swings",
-            "Hay-filled tunnels",
-            "Cardboard boxes",
-            "Exercise wheels",
-            "Tubes",
-            "Floating basking platforms",
-            "Jolly balls"
-        ]
-        return random.choice(toys)
-
-    def __len__(self):
-        # let's define a magic function for the super-class
-        return self.size
-
-    def get_info(self):
-        return (f"Animal: {self.species}, name: {self.name}, sex: {self.sex}, breed: {self.breed}, age: {self.age}, "
-                f"size: {self.size}, price: {self.price}")
 
 
 class Dog(Animal):

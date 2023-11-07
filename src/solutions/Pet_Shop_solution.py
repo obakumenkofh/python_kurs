@@ -1,4 +1,4 @@
-from solutions.Animal_solution import *
+from Animal_solution import *
 import datetime
 
 

@@ -1,4 +1,7 @@
 import datetime
+from solutions.Animal_solution import *
+
+
 class Equipment:
     def __init__(self, name, price):
         self.name = name
@@ -85,12 +88,10 @@ class Pet_Shop:
         # check if today is 23.11.2023 and increase prices
 
 
-
-
 if __name__ == "__main__":
-    # here we can test the class
-    pass
-
+    animals = generate_animals([2, 2, 2, 2])
+    for animal in animals:
+        print(animal.get_info())
 
 """
 more stuf to do:
